@@ -1,7 +1,8 @@
 import { PosrCoverImage } from '@/components/PosrCoverImage';
 import { PostHeading } from '@/components/PostHeading';
+import { PostSumary } from '@/components/PostSumary';
 
-export function PostFeatured() {
+export async function PostFeatured() {
   const slug = 'qualquer coisa';
   const postLink = `/post${slug}`;
 
@@ -19,28 +20,15 @@ export function PostFeatured() {
           priority: true,
         }}
       />
-      <div className='flex flex-col gap-4 sm:justify-center'>
-        <time
-          className='text-slate-600 block text-sm/tight'
-          dateTime='2025-04-20'
-        >
-          20/04/2025 10:00
-        </time>
-
-        <PostHeading as='h1' url={postLink}>
-          Ipsum has been the industa
-        </PostHeading>
-
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industa galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. five centuries, but also the leap
-          into electronic typesetting, remaining essentially unchanged.It was
-          popularised in the 1960s
-        </p>
-      </div>
+      <PostSumary
+        postLink={postLink}
+        postHeading='h1'
+        createdAt={'2025-04-08T00:24:38.616Z'}
+        excerpt={
+          'O Next.js também é uma boa escolha para quem quer se preocupar com performance e SEO.'
+        }
+        title={'Rotina matinal de pessoas altamente eficazes'}
+      />
     </section>
   );
 }
