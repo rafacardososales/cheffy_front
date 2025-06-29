@@ -1,4 +1,3 @@
-import { postRepository } from '@/repositories/post';
 import { PosrCoverImage } from '@/components/PosrCoverImage';
 import { PostSumary } from '@/components/PostSumary';
 import { findAllPublicPosts } from '@/lib/post/queries';
@@ -6,7 +5,7 @@ import { findAllPublicPosts } from '@/lib/post/queries';
 export async function PostList() {
   const posts = await findAllPublicPosts();
   return (
-    <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+    <div className='grid grid-cols-1 mb-16 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
       {posts.slice(1).map(post => {
         const postLink = `/post${post.slug}`;
 
